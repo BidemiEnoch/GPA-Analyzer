@@ -1,0 +1,82 @@
+#final-grade-container {
+	padding: 20px;
+	width: fit-content;
+	border: 2px solid var(--purple);
+	border-radius: 10px;
+	background: var(--light-bg);
+	font-family: Arial, Helvetica, sans-serif;
+	height: fit-content;
+}
+
+#final-grade-header {
+	font-size: 24px;
+	margin: 0px auto 30px auto;
+	width: fit-content;
+	font-family: Closeness;
+	color: var(--purple);
+}
+
+#final-grade-icon {
+	width: 90px;
+	height: 90px;
+	margin: auto;
+	background-image: url(../../../assets/svg/calculator-Icon.svg);
+	background-size: 100% 100%;
+	background-color: var(--light-bg);
+}
+
+#current-cgpa-data,
+#final-cgpa-data {
+	border: var(--thick-container-border);
+	margin-bottom: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	border-radius: 10px;
+	width: fit-content;
+	margin-right: 0px;
+}
+
+#current-cgpa-data td,
+#final-cgpa-data td {
+	max-width: 300px;
+	height: 60px;
+	padding: 10px 19px;
+	border-top: var(--container-border);
+}
+
+#current-cgpa-data input,
+#final-cgpa-data input {
+	padding: 6px 10px;
+	background: none;
+	width: 250px;
+	border: var(--container-border);
+	border-radius: 5px;
+}
+
+.final-grade-legend {
+	font-size: 18px;
+	text-align: center;
+	margin: 10px 0px;
+	font-weight: 400;
+}
+
+#final-grade-conclusion {
+	border: var(--thick-container-border);
+	border-radius: 10px;
+	max-width: 570px;
+	background: var(--dark-bg);
+	margin: 20px auto;
+}
+
+#final-grade-conclusion-content {
+	margin-bottom: 15px;
+	padding: 10px 22px;
+	color: #060;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+#basic-btn-wrapper {
+	margin: 5px auto;
+	width: fit-content;
+}

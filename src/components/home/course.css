@@ -1,0 +1,33 @@
+.table-row > td {
+	padding: 3px 12px;
+	border: var(--container-border);
+	max-width: 140px;
+}
+
+.table-row > td > input {
+	border: none;
+	width: 100%;
+	background: none;
+}
+
+.table-row > td > select {
+	border: none;
+	background: none;
+	width: 100%;
+}
+
+.table-row > td > select:hover {
+	cursor: pointer;
+}
+
+.table-row > td > select > option {
+	color: black;
+}
+
+.table-row .close-row-btn {
+	padding: 2px;
+}
+
+.table-row .close-row-btn:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,119 @@
+#semester-container {
+	border: 2px solid var(--purple);
+	padding: 6px 15px;
+	border-radius: 10px;
+	background: var(--light-bg);
+	font-family: Arial, Helvetica, sans-serif;
+	height: fit-content;
+}
+
+#semester-header {
+	font-size: 24px;
+	margin: auto;
+	width: fit-content;
+	font-family: Closeness;
+	color: var(--purple);
+}
+
+#semester-icon {
+	width: 120px;
+	height: 120px;
+	margin: auto;
+	background-image: url(../../assets/svg/graduation-cap-icon.svg);
+	background-size: 100% 100%;
+}
+
+.semester {
+	position: relative;
+	padding: 0px 7px;
+	border: var(--container-border);
+	border-radius: 13px;
+	background: var(--light-bg);
+	margin: 5px;
+	width: fit-content;
+}
+
+.semester > .header {
+	margin: 14px 4px;
+	font-size: 18px;
+	text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+.semester .main {
+	margin: 5px;
+	display: block;
+}
+.semester table {
+	border: var(--container-border);
+	background: var(--light-bg);
+	width: 100%;
+}
+.semester table thead > td {
+	padding: 5px 2px;
+	text-align: center;
+}
+
+.table-wrapper,
+.info-wrapper {
+	margin: 1px;
+	height: fit-content;
+}
+
+.table-wrapper {
+	margin-left: 2px;
+}
+
+.info-wrapper {
+	margin-left: 2px;
+	margin-top: 5px;
+	background: var(--light-bg);
+	border: var(--container-border);
+}
+
+.info-wrapper-child-1 {
+	display: flex;
+	width: fit-content;
+}
+
+.info-wrapper-child-2 {
+	margin: 13px 10px;
+}
+
+.info-wrapper-child-2 > span {
+	display: inline-block;
+	width: 90px;
+
+	margin: 1px;
+	text-align: center;
+}
+
+.footer {
+	display: flex;
+}
+
+.footer > div {
+	margin: 10px 20px;
+}
+
+#cgpa-info-box {
+	border: var(--thick-container-border);
+	padding: 10px 50px;
+	border-radius: 13px;
+	margin: 5px;
+	flex: 1;
+}
+
+#cgpa-info-box-centered {
+	width: fit-content;
+	margin: auto;
+}
+
+#cgpa-info-box-centered > div {
+	display: inline-block;
+	width: fit-content;
+	margin: 0px 20px;
+	font-size: 18px;
+	font-weight: bold;
+}

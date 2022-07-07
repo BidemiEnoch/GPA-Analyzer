@@ -1,0 +1,21 @@
+.basic-btn {
+	margin: 7px;
+	border: 2px solid var(--purple);
+	padding: 7px 12px;
+	display: inline-block;
+	font-size: 14px;
+	border-radius: 7px;
+	background: #eee;
+	transition: background 300ms;
+	color: var(--purple);
+	font-weight: 700;
+}
+
+.clickable-btn:hover {
+	cursor: pointer;
+	background: #ddd;
+}
+
+.unclickable-btn:hover {
+	cursor: no-drop;
+}

@@ -1,0 +1,58 @@
+@import "./bootstrap/css/bootstrap.min.css";
+:root {
+	--light-bg: rgb(255, 255, 255);
+	--dark-bg: rgb(250, 250, 250);
+	--btn-border: 2px solid rgb(187, 34, 93);
+	--container-border: 1px solid black;
+	--thick-container-border: 1px solid black;
+	--purple: rgb(104, 10, 46);
+}
+
+@font-face {
+	font-family: Advent Pro;
+	src: url("./assets/fonts/Advent_Pro/AdventPro-Regular.ttf");
+}
+
+@font-face {
+	font-family: AllertaStencil;
+	src: url("./assets/fonts/AllertaStencil/AllertaStencil-Regular.ttf");
+}
+
+@font-face {
+	font-family: Quantico;
+	src: url("./assets/fonts/Quantico/Quantico-Regular.otf");
+}
+
+@font-face {
+	font-family: Prototype;
+	src: url("./assets/fonts/Prototype.ttf");
+}
+
+@font-face {
+	font-family: Closeness;
+	src: url(./assets/fonts/closeness/Closeness.ttf);
+}
+
+*:focus {
+	outline: none;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background: rgb(250, 250, 250);
+	color: black;
+}
+
+a {
+	text-decoration: none;
+}
+
+main {
+	flex: 1;
+}

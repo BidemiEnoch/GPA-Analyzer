@@ -1,0 +1,30 @@
+.bar-loader {
+	border: 2px solid green;
+	width: fit-content;
+	padding: 2px;
+	margin: 10px auto;
+	min-width: 200px;
+	text-align: center;
+	border-radius: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #eee;
+	font-size: 16px;
+	color: green;
+}
+
+.bar-loader > div {
+	background: green;
+	height: 5px;
+	border-radius: 2px;
+	animation: load 1.4s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes load {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}

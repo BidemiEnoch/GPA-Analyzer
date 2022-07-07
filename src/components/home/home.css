@@ -1,0 +1,15 @@
+#home-content {
+	display: flex;
+	padding-top: 20px;
+	padding-bottom: 100px;
+}
+
+#toggle-mode-container,
+#home-main {
+	display: inline-flex;
+	width: fit-content;
+}
+
+#home-main {
+	margin: 0px auto;
+}

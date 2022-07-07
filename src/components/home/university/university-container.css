@@ -1,0 +1,114 @@
+#university-container {
+	border: 2px solid var(--purple);
+	padding: 20px;
+	font-size: 22px;
+	border-radius: 10px;
+	background: white;
+	height: fit-content;
+}
+
+#university-container-header {
+	font-size: 24px;
+	margin: 10px auto;
+	width: fit-content;
+	font-family: Closeness;
+	color: var(--purple);
+}
+
+#university-excel-main {
+	border: 1px solid grey;
+	border-radius: 10px;
+	padding: 20px;
+	max-width: 500px;
+}
+
+#university-excel-desc {
+	margin: 10px;
+	text-align: justify;
+}
+
+#university-excel-example {
+	width: 350px;
+	height: 150px;
+	background: url(../../../assets/images/excel-input-example.png);
+	background-size: cover;
+	margin: 20px auto;
+}
+
+#university-excel-input {
+	margin: 20px auto;
+	width: fit-content;
+}
+
+#upload-excel-input {
+	margin: 20px auto;
+	width: fit-content;
+}
+
+#university-excel-input > input {
+	max-width: 400px;
+	overflow-x: scroll;
+	font-size: 16px;
+	color: rgb(9, 71, 9);
+	font-weight: 700;
+	border: 1px solid grey;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#uni-chart-main {
+	border: 2px solid var(--purple);
+	border-radius: 10px;
+	padding: 5px;
+}
+
+#uni-chart-wrapper {
+	width: fit-content;
+	margin: auto;
+	display: block;
+}
+#uni-chart-footer {
+	margin-top: 20px;
+	font-size: 16px;
+	border: 2px solid var(--purple);
+	padding: 20px 90px;
+	border-radius: 10px;
+	font-family: cursive;
+}
+
+#uni-chart-footer > div {
+	margin-bottom: 5px;
+	display: inline-block;
+	margin-right: 10px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#uni-chart-footer > div:nth-child(1) {
+	border: 1px solid black;
+}
+
+#uni-chart-footer > div:nth-child(2) {
+	color: #0a0;
+	border: 1px solid #0a0;
+}
+
+#uni-chart-footer > div:nth-child(3) {
+	color: #aa0;
+	border: 1px solid #aa0;
+}
+
+#uni-chart-footer > div:nth-child(4) {
+	color: #444;
+	border: 1px solid #444;
+}
+
+#uni-chart-footer > div:nth-child(5) {
+	color: #a00;
+	border: 1px solid #a00;
+}
+
+#uni-chart-footer > div:nth-child(6) {
+	color: #f00;
+	border: 1px solid #f00;
+}
