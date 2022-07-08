@@ -43,10 +43,6 @@
 
 #analyzer-footer > input {
 	width: 500px;
-	padding: 5px 15px;
-	border: var(--container-border);
-	border-radius: 3px;
-	background: #eee;
 }
 
 #analyzer-btn-wrapper {

@@ -46,11 +46,7 @@
 
 #current-cgpa-data input,
 #final-cgpa-data input {
-	padding: 6px 10px;
-	background: none;
 	width: 250px;
-	border: var(--container-border);
-	border-radius: 5px;
 }
 
 .final-grade-legend {

@@ -88,6 +88,7 @@ const AnalyzerContainer = () => {
 						setGpaInputValue(e.currentTarget.value);
 					}}
 					value={gpaInputValue}
+					className="basic-input"
 				/>
 				<label htmlFor="cgpa-series">
 					Your CGPA series (Autogenerate:
@@ -113,6 +114,7 @@ const AnalyzerContainer = () => {
 					onInput={(e) => {
 						if (!autoMode) setCgpaInputValue(e.currentTarget.value);
 					}}
+					className="basic-input"
 				/>
 
 				<div id="analyzer-btn-wrapper">

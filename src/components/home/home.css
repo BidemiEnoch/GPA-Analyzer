@@ -13,3 +13,16 @@
 #home-main {
 	margin: 0px auto;
 }
+
+.basic-input {
+	border: 2px solid #444;
+	border-radius: 6px;
+	transition: border 300ms;
+	background: none;
+
+	padding: 6px 10px;
+}
+
+.basic-input:focus {
+	border: 2px solid rgb(7, 7, 7);
+}

@@ -1,5 +1,5 @@
 :root {
-	--dropdown-border-color: rgb(155, 155, 155);
+	--dropdown-border-color: rgb(14, 151, 26);
 }
 
 #navbar {
@@ -79,6 +79,9 @@
 	margin: 0px 0px;
 	color: black;
 	padding: 5px 10px;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.315), 3px 3px rgba(44, 43, 43, 0.199), -1px -1px rgba(0, 0, 0, 0.315),
+		-3px -3px rgba(44, 43, 43, 0.199), -1px 1px rgba(0, 0, 0, 0.315), -3px 3px rgba(44, 43, 43, 0.199),
+		1px -1px rgba(0, 0, 0, 0.315), 3px -3px rgba(44, 43, 43, 0.199);
 }
 
 .author-links-child {

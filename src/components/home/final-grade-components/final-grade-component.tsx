@@ -20,8 +20,8 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 
 	const [conclusion, setConclusion] = useState(
 		<div>
-			"The conclusion of the computation will appear here if the appropriate values have been entered. You can
-			check your student portal to verify the validity of the data being entered."
+			"The conclusion of the computation will appear here if the appropriate values have been entered.
+			You can check your student portal to verify the validity of the data being entered."
 			<br />
 		</div>
 	);
@@ -36,13 +36,15 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 			if (!testcase && val.trim() !== "") return;
 			setStateFn(val);
 		} else if (regexType === "decimal") {
-			const testOnfivePoint = /^[0-4]{0,1}(\.|(\.\d{1,2}))?$/.test(val) || /^5(\.|(\.0{1,2}))?$/.test(val);
+			const testOnfivePoint =
+				/^[0-4]{0,1}(\.|(\.\d{1,2}))?$/.test(val) || /^5(\.|(\.0{1,2}))?$/.test(val);
 
 			if (!testOnfivePoint && val.trim() !== "") return;
 			setStateFn(val);
 		}
 	};
 
+	// isValidInput is merely just a wrapper for isValidFinalGradeInput
 	const isValidInput = () =>
 		isValidFinalGradeInput(
 			currentCGPA,
@@ -65,34 +67,31 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 			+finalAvgCredits
 		);
 
-		let conclusionVal;
-
 		if (requiredCGPA > maxGrade)
-			conclusionVal = (
+			setConclusion(
 				<div>
-					"The target CGPA is impossible to achieve based on your current CGPA because you will need need an
-					approximate GPA of {requiredCGPA.toFixed(2)} for the next {finalSemesterCount} semester(s) which is
-					higher than the {maxGrade}.0 scale."
+					"The target CGPA is impossible to achieve based on your current CGPA because you
+					will need need an approximate GPA of {requiredCGPA.toFixed(2)} for the next{" "}
+					{finalSemesterCount} semester(s) which is higher than the {maxGrade}.0 scale."
 				</div>
 			);
 		else if (requiredCGPA < 0)
-			conclusionVal = (
+			setConclusion(
 				<div>
-					"The target CGPA is impossible to achieve based on your current CGPA because you will need need an
-					approximate GPA of {requiredCGPA.toFixed(2)} for the next {finalSemesterCount} semester(s) which is
-					a negative value for a CGPA."
+					"The target CGPA is impossible to achieve based on your current CGPA because you
+					will need need an approximate GPA of {requiredCGPA.toFixed(2)} for the next{" "}
+					{finalSemesterCount} semester(s) which is a negative value for a CGPA."
 				</div>
 			);
 		else
-			conclusionVal = (
+			setConclusion(
 				<div>
-					"Based on the information provided, You will need to achieve a GPA of {requiredCGPA.toFixed(2)} for
-					the next {finalSemesterCount} semester(s) to finish with a CGPA of {finalCGPA}. We wish you the best
-					of luck in attaining your target CGPA."
+					"Based on the information provided, You will need to achieve a GPA of{" "}
+					{requiredCGPA.toFixed(2)} for the next {finalSemesterCount} semester(s) to
+					finish with a CGPA of {finalCGPA}. We wish you the best of luck in attaining
+					your target CGPA."
 				</div>
 			);
-
-		setConclusion(conclusionVal);
 	};
 
 	return (
@@ -110,8 +109,15 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 								<input
 									name="current-cgpa"
 									placeholder="CGPA"
-									onChange={(e) => setStateHandler(e.currentTarget.value, setCurrentCGPA, "decimal")}
+									onChange={(e) =>
+										setStateHandler(
+											e.currentTarget.value,
+											setCurrentCGPA,
+											"decimal"
+										)
+									}
 									value={currentCGPA}
+									className="basic-input"
 								/>
 							</td>
 						</tr>
@@ -122,22 +128,34 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 									name="current-semester-no"
 									placeholder="No. of semesters"
 									onChange={(e) =>
-										setStateHandler(e.currentTarget.value, setcurrentSemesterCount, "integer")
+										setStateHandler(
+											e.currentTarget.value,
+											setcurrentSemesterCount,
+											"integer"
+										)
 									}
 									value={currentSemesterCount}
+									className="basic-input"
 								/>
 							</td>
 						</tr>
 						<tr>
-							<td>Average no. of credit units offered per those semesters:</td>
+							<td>
+								Average no. of credit units offered per those semesters:
+							</td>
 							<td>
 								<input
 									name="current-avg-credits"
 									placeholder="No. of credits"
 									onChange={(e) =>
-										setStateHandler(e.currentTarget.value, setcurrentAvgCredits, "integer")
+										setStateHandler(
+											e.currentTarget.value,
+											setcurrentAvgCredits,
+											"integer"
+										)
 									}
 									value={currentAvgCredits}
+									className="basic-input"
 								/>
 							</td>
 						</tr>
@@ -154,8 +172,15 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 								<input
 									name="final-cgpa"
 									placeholder="CGPA"
-									onChange={(e) => setStateHandler(e.currentTarget.value, setFinalCGPA, "decimal")}
+									onChange={(e) =>
+										setStateHandler(
+											e.currentTarget.value,
+											setFinalCGPA,
+											"decimal"
+										)
+									}
 									value={finalCGPA}
+									className="basic-input"
 								/>
 							</td>
 						</tr>
@@ -166,9 +191,14 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 									name="final-semester-no"
 									placeholder="No. of semesters"
 									onChange={(e) =>
-										setStateHandler(e.currentTarget.value, setFinalSemesterCount, "integer")
+										setStateHandler(
+											e.currentTarget.value,
+											setFinalSemesterCount,
+											"integer"
+										)
 									}
 									value={finalSemesterCount}
+									className="basic-input"
 								/>
 							</td>
 						</tr>
@@ -179,9 +209,14 @@ const FinalGradeContainer = ({ gradingScale }: props) => {
 									name="final-avg-credits"
 									placeholder="No. of credits"
 									onChange={(e) =>
-										setStateHandler(e.currentTarget.value, setFinalAvgCredits, "integer")
+										setStateHandler(
+											e.currentTarget.value,
+											setFinalAvgCredits,
+											"integer"
+										)
 									}
 									value={finalAvgCredits}
+									className="basic-input"
 								/>
 							</td>
 						</tr>
