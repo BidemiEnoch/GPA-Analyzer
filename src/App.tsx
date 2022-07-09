@@ -7,6 +7,7 @@ import FinalGradeContainer from "./components/home/final-grade-components/final-
 import AnalyzerContainer from "./components/home/cgpa-analyzer-components/cgpa-analyzer-container";
 import LandingPage from "./components/home/landing-page/landing-page";
 import UniContainer from "./components/home/university/university-container";
+import GpaReverse from "./components/home/gpa-reverse-component/gpa-reverse";
 import { fourPointScale } from "./utils/compute-gpa";
 import "./App.css";
 
@@ -22,7 +23,7 @@ const App = () => {
 	};
 
 	return (
-		<div>
+		<>
 			<NavBar />
 			<main>
 				<Home
@@ -46,11 +47,12 @@ const App = () => {
 							path="/university-tools"
 							element={<UniContainer gradingScale={scale} />}
 						/>
+						<Route path="/gpa-reverse-calculator" element={<GpaReverse />} />
 						<Route element={<div>404</div>} />
 					</Routes>
 				</Home>
 			</main>
-		</div>
+		</>
 	);
 };
 

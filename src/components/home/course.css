@@ -1,6 +1,6 @@
 .table-row > td {
 	padding: 3px 12px;
-	border: var(--container-border);
+	border: var(--thick-container-border);
 	max-width: 140px;
 }
 

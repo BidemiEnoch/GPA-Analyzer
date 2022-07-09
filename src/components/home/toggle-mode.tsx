@@ -48,7 +48,7 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 				)}
 
 				<div className="toggle-mode-section">
-					<div className="toggle-mode-header">Select a tool</div>
+					<div className="toggle-mode-header">Student tools</div>
 					<div className="toggle-mode-main">
 						<ul>
 							<li>
@@ -57,7 +57,7 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 									target={target}
 									rel="noreferrer"
 								>
-									Gpa calculator
+									Gpa Calculator
 								</Link>
 							</li>
 							<li>
@@ -66,7 +66,7 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 									target={target}
 									rel="noreferrer"
 								>
-									Final grade calculator
+									Final Grade Calculator
 								</Link>
 							</li>
 							<li>
@@ -78,13 +78,20 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 									CGPA Analyzer
 								</Link>
 							</li>
+						</ul>
+					</div>
+				</div>
+				<div className="toggle-mode-section">
+					<div className="toggle-mode-header">University tool</div>
+					<div className="toggle-mode-main">
+						<ul>
 							<li>
 								<Link
 									to="/university-tools"
 									target={target}
 									rel="noreferrer"
 								>
-									University Tools
+									Grade Class Percentage
 								</Link>
 							</li>
 						</ul>
@@ -105,9 +112,7 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 							</li>
 
 							<li>
-								<a href="https://github.com/repo">
-									Our source code on github
-								</a>
+								<a href="https://github.com/repo">Github source code</a>
 							</li>
 						</ul>
 					</div>

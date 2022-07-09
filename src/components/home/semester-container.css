@@ -26,9 +26,9 @@
 .semester {
 	position: relative;
 	padding: 0px 7px;
-	border: var(--container-border);
-	border-radius: 13px;
-	background: var(--light-bg);
+	border: 2px solid rgb(36, 35, 35);
+	border-radius: 5px;
+	background: rgb(255, 255, 255);
 	margin: 5px;
 	width: fit-content;
 }
@@ -46,7 +46,7 @@
 	display: block;
 }
 .semester table {
-	border: var(--container-border);
+	border: var(--thick-container-border);
 	background: var(--light-bg);
 	width: 100%;
 }
@@ -69,7 +69,7 @@
 	margin-left: 2px;
 	margin-top: 5px;
 	background: var(--light-bg);
-	border: var(--container-border);
+	border: var(--thick-container-border);
 }
 
 .info-wrapper-child-1 {

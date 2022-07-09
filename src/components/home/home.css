@@ -2,11 +2,12 @@
 	display: flex;
 	padding-top: 20px;
 	padding-bottom: 100px;
+	z-index: 0;
 }
 
 #toggle-mode-container,
-#home-main {
-	display: inline-flex;
+#home-main,
+#feedback-container {
 	width: fit-content;
 }
 

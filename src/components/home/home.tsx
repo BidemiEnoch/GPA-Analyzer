@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 import ToggleModeContainer from "./toggle-mode";
+import FeedbackIcon from "./feedback/feedback-icon";
 import "./home.css";
 
 interface props {
@@ -39,6 +40,7 @@ const Home = ({ children, setGradingScale, scale, setAdditionalSettings, additio
 				)}
 
 				<div id="home-main">{children}</div>
+				<FeedbackIcon />
 			</div>
 		</>
 	);
