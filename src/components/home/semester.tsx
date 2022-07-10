@@ -1,25 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Course, CourseData } from "./course";
 import { computeGPA, isValidGPA } from "../../utils/compute-gpa";
 import BasicBtn from "../reusable/basic-btn";
+import Stack from "../../utils/structures/stack";
 
-export class Semester {
-	tcu: string;
-	tqp: string;
-
-	constructor() {
-		this.tcu = "---";
-		this.tqp = "---";
-	}
-
-	get isNull(): boolean {
-		return this.tcu === "---" || this.tqp === "";
-	}
-}
+/*
+This constant was defined as a function returning an array and not directly as an array
+so that it returns a new array reference on every use
+*/
+const DEFAULT_COURSES = () => [new CourseData("Course #1"), new CourseData("Course #2"), new CourseData("Course #3")];
 
 interface props {
 	index: number;
 	addSemester: () => void;
+	deleteSemester: (index: number) => void;
 	isLastSemester: boolean;
 	setSemesterData: (index: number, tqp: string, tcu: string) => void;
 	displayWeightChart: (index: number, courses: CourseData[]) => void;
@@ -29,16 +23,13 @@ interface props {
 export const SemesterUI = ({
 	index,
 	addSemester,
+	deleteSemester,
 	isLastSemester,
 	setSemesterData,
 	displayWeightChart,
 	gradingScale,
 }: props) => {
-	const [courses, setCourses] = useState([
-		new CourseData("Course #1"),
-		new CourseData("Course #2"),
-		new CourseData("Course #3"),
-	]);
+	const [courses, setCourses] = useState(DEFAULT_COURSES);
 
 	const [gpa, setGpa] = useState<string>("---");
 	const [tqp, setTQP] = useState<string>("---");
@@ -49,6 +40,8 @@ export const SemesterUI = ({
 	const [viewWeightChartBtnStatus, setViewWeightChartBtnStatus] = useState(false);
 
 	const maxCourseNo = 14;
+	const prevStatesOfCourses = useRef(new Stack<CourseData[]>());
+	//const lastAction=useRef<"undo"|"other">("other");
 
 	const addCourse = () => {
 		if (!addRowBtnStatus) return;
@@ -80,19 +73,17 @@ export const SemesterUI = ({
 		setCourses(Object.assign([], courses));
 	};
 
-	useEffect(() => {
-		//console.log(courses);
-	});
-
 	const setCredit = (courseIndex: number, val: string) => {
 		const isNumbers = /^[0-9]+$/.test(val);
 		if ((!isNumbers && val.trim() !== "") || val.length > 3) return;
 		courses[courseIndex].credits = val;
+
 		setCourses(Object.assign([], courses));
 	};
 
 	const setGrade = (courseIndex: number, val: string) => {
 		courses[courseIndex].grade = val;
+
 		setCourses(Object.assign([], courses));
 	};
 
@@ -126,8 +117,48 @@ export const SemesterUI = ({
 		}
 	};
 
+	const clearTable = () => {
+		let emptyRows = 0;
+		for (const course of courses) {
+			if (course.isEmpty && !course.name) emptyRows++;
+		}
+		if (emptyRows !== courses.length) setCourses(DEFAULT_COURSES);
+	};
+
+	const setToPrevCourseData = () => {
+		if (prevStatesOfCourses.current.size <= 1) return;
+
+		prevStatesOfCourses.current.pop();
+		setCourses(prevStatesOfCourses.current.top);
+		console.log(JSON.stringify(prevStatesOfCourses.current));
+		console.log(prevStatesOfCourses.current.size);
+	};
+
+	const cloneCourseData = (courses: CourseData[]) => {
+		const data = [];
+		for (const course of courses) {
+			data.push(new CourseData(course.placeholder, course.name, course.credits, course.grade));
+		}
+		return data;
+	};
+
+	useEffect(() => {
+		if (prevStatesOfCourses.current.lastAction === "pop") {
+			prevStatesOfCourses.current.pop();
+		}
+		//console.log(JSON.stringify(courses));
+		const data = cloneCourseData(courses);
+		prevStatesOfCourses.current.push(data);
+		console.log(JSON.stringify(prevStatesOfCourses.current));
+		console.log(prevStatesOfCourses.current.size);
+	}, [courses]);
+
 	return (
 		<div className="semester">
+			<div className="corner-icons">
+				<div onClick={setToPrevCourseData}>Undo</div>
+				{isLastSemester && <div onClick={() => deleteSemester(index)}>delete</div>}
+			</div>
 			<div className="header">Semester #{index + 1}</div>
 			<div className="main">
 				<div className="table-wrapper">
@@ -185,13 +216,25 @@ export const SemesterUI = ({
 						else setCalculateGpaBtnStatus(false);
 					}}
 				/>
-
-				{isLastSemester ? (
+				<BasicBtn action={clearTable} content="Clear Table" isClickable={true} />
+				{isLastSemester && (
 					<BasicBtn action={addSemester} content="Add semester" isClickable={true} />
-				) : (
-					<></>
 				)}
 			</div>
 		</div>
 	);
 };
+
+export class Semester {
+	tcu: string;
+	tqp: string;
+
+	constructor() {
+		this.tcu = "---";
+		this.tqp = "---";
+	}
+
+	get isNull(): boolean {
+		return this.tcu === "---" || this.tqp === "";
+	}
+}

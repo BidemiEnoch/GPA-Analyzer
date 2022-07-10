@@ -31,6 +31,12 @@
 	background: rgb(255, 255, 255);
 	margin: 5px;
 	width: fit-content;
+	min-width: 500px;
+}
+
+.semester > .corner-icons {
+	margin-left: auto;
+	width: fit-content;
 }
 
 .semester > .header {
@@ -94,7 +100,7 @@
 }
 
 .footer > div {
-	margin: 10px 20px;
+	margin: 10px 5px;
 }
 
 #cgpa-info-box {

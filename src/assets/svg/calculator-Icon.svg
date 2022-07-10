@@ -28,7 +28,7 @@
   >
 <path
       d="m270 290.98c0 18.236-14.154 33.02-31.614 33.02h-116.78c-17.46 0-31.61-14.78-31.61-33.02v-221.96c0-18.237 14.15-33.02 31.61-33.02h116.77c17.47 0 31.62 14.783 31.62 33.02v221.96z"
-       fill="rgb(104, 10, 46)"
+       fill="rgb(6, 4, 102)"
   />
 <path
       d="m252 114.62c0 7.054-4.509 13.379-10.688 13.379h-121.62c-6.18 0-11.69-6.32-11.69-13.38v-46.593c0-7.053 5.51-12.027 11.69-12.027h121.62c6.18 0 10.69 4.974 10.69 12.027v46.593z"
@@ -126,33 +126,5 @@
     />
 </g
   >
-<metadata
-    ><rdf:RDF
-      ><cc:Work
-        ><dc:format
-          >image/svg+xml</dc:format
-        ><dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
-        /><cc:license
-            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
-        /><dc:publisher
-          ><cc:Agent
-              rdf:about="http://openclipart.org/"
-            ><dc:title
-              >Openclipart</dc:title
-            ></cc:Agent
-          ></dc:publisher
-        ></cc:Work
-      ><cc:License
-          rdf:about="http://creativecommons.org/licenses/publicdomain/"
-        ><cc:permits
-            rdf:resource="http://creativecommons.org/ns#Reproduction"
-        /><cc:permits
-            rdf:resource="http://creativecommons.org/ns#Distribution"
-        /><cc:permits
-            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
-        /></cc:License
-      ></rdf:RDF
-    ></metadata
-  ></svg
+</svg
 >

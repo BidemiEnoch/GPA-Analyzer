@@ -24,6 +24,11 @@ const SemesterContainer = ({ gradingScale }: props) => {
 		setSemesters(Object.assign([], semesters));
 	};
 
+	const deleteSemester = (index: number) => {
+		semesters.splice(index, 1);
+		setSemesters(Object.assign([], semesters));
+	};
+
 	const setSemesterData = (index: number, tqp: string, tcu: string) => {
 		semesters[index].tcu = tcu;
 		semesters[index].tqp = tqp;
@@ -66,6 +71,7 @@ const SemesterContainer = ({ gradingScale }: props) => {
 							key={i}
 							index={i}
 							addSemester={addSemester}
+							deleteSemester={deleteSemester}
 							isLastSemester={i + 1 === semesters.length}
 							setSemesterData={setSemesterData}
 							displayWeightChart={displayWeightChart}

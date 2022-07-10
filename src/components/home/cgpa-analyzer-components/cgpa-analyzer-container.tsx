@@ -70,7 +70,10 @@ const AnalyzerContainer = () => {
 
 	return (
 		<div id="analyzer-container">
-			<div id="analyzer-header">CGPA Analyzer</div>
+			<div id="analyzer-header">
+				CGPA Analyzer
+				<div id="analyzer-icon" />
+			</div>
 			<div id="analyzer-main">
 				<HighchartsReact
 					highcharts={Highcharts}

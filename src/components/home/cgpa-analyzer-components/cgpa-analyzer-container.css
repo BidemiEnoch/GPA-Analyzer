@@ -20,6 +20,14 @@
 	margin-bottom: 30px;
 }
 
+#analyzer-icon {
+	width: 70px;
+	height: 70px;
+	margin: 10px auto;
+	background-image: url(../../../assets/svg/analyzer-icon.svg);
+	background-size: 100% 100%;
+}
+
 #analyzer-main {
 	padding: 10px;
 	border: var(--container-border);

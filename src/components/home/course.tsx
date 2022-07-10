@@ -8,11 +8,11 @@ export class CourseData {
 	credits: string;
 	grade: string;
 
-	constructor(placeholder?: string) {
+	constructor(placeholder?: string, name?: string, credits?: string, grade?: string) {
 		this.placeholder = placeholder;
-		this.name = "";
-		this.credits = "";
-		this.grade = "--";
+		this.name = name || "";
+		this.credits = credits || "";
+		this.grade = grade || "--";
 	}
 
 	weight = (scale: Map<string, number>): number => {

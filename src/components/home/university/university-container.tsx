@@ -35,7 +35,10 @@ const UniContainer = ({ gradingScale }: props) => {
 
 	return (
 		<div id="university-container">
-			<div id="university-container-header">Grade class percentage</div>
+			<div id="university-container-header">
+				Grade class percentage
+				<div id="university-header-icon" />
+			</div>
 			{excelTable ? (
 				<UniChart table={excelTable} gradingScale={gradingScale} />
 			) : (

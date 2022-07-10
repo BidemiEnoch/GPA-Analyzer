@@ -15,6 +15,14 @@
 	color: var(--purple);
 }
 
+#university-header-icon {
+	width: 70px;
+	height: 70px;
+	margin: 10px auto;
+	background-image: url(../../../assets/svg/pie-chart.svg);
+	background-size: 100% 100%;
+}
+
 #university-excel-main {
 	border: 1px solid grey;
 	border-radius: 10px;
