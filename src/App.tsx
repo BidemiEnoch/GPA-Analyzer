@@ -17,9 +17,7 @@ const App = () => {
 		"open links in new tab": false,
 	});
 
-	const setGradingScale = (newScale: Map<string, number>) => {
-		setScale(newScale);
-	};
+	const setGradingScale = (newScale: Map<string, number>) => setScale(newScale);
 
 	return (
 		<>

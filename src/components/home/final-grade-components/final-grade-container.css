@@ -1,7 +1,7 @@
 #final-grade-container {
 	padding: 20px;
 	width: fit-content;
-	border: 2px solid var(--purple);
+	border: 2px solid var(--theme);
 	border-radius: 10px;
 	background: var(--light-bg);
 	font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +13,6 @@
 	margin: 0px auto 30px auto;
 	width: fit-content;
 	font-family: Closeness;
-	color: var(--purple);
 }
 
 #final-grade-icon {

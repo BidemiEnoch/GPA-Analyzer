@@ -15,6 +15,7 @@ interface props {
 	addSemester: () => void;
 	deleteSemester: (index: number) => void;
 	isLastSemester: boolean;
+	singular: boolean;
 	setSemesterData: (index: number, tqp: string, tcu: string) => void;
 	displayWeightChart: (index: number, courses: CourseData[]) => void;
 	gradingScale: Map<string, number>;
@@ -28,6 +29,7 @@ export const SemesterUI = ({
 	setSemesterData,
 	displayWeightChart,
 	gradingScale,
+	singular,
 }: props) => {
 	const [courses, setCourses] = useState(DEFAULT_COURSES);
 
@@ -41,7 +43,6 @@ export const SemesterUI = ({
 
 	const maxCourseNo = 14;
 	const prevStatesOfCourses = useRef(new Stack<CourseData[]>());
-	//const lastAction=useRef<"undo"|"other">("other");
 
 	const addCourse = () => {
 		if (!addRowBtnStatus) return;
@@ -75,7 +76,7 @@ export const SemesterUI = ({
 
 	const setCredit = (courseIndex: number, val: string) => {
 		const isNumbers = /^[0-9]+$/.test(val);
-		if ((!isNumbers && val.trim() !== "") || val.length > 3) return;
+		if ((!isNumbers && val !== "") || val.length > 3) return;
 		courses[courseIndex].credits = val;
 
 		setCourses(Object.assign([], courses));
@@ -130,8 +131,6 @@ export const SemesterUI = ({
 
 		prevStatesOfCourses.current.pop();
 		setCourses(prevStatesOfCourses.current.top);
-		console.log(JSON.stringify(prevStatesOfCourses.current));
-		console.log(prevStatesOfCourses.current.size);
 	};
 
 	const cloneCourseData = (courses: CourseData[]) => {
@@ -149,15 +148,19 @@ export const SemesterUI = ({
 		//console.log(JSON.stringify(courses));
 		const data = cloneCourseData(courses);
 		prevStatesOfCourses.current.push(data);
-		console.log(JSON.stringify(prevStatesOfCourses.current));
-		console.log(prevStatesOfCourses.current.size);
 	}, [courses]);
 
 	return (
 		<div className="semester">
 			<div className="corner-icons">
-				<div onClick={setToPrevCourseData}>Undo</div>
-				{isLastSemester && <div onClick={() => deleteSemester(index)}>delete</div>}
+				<div title="Undo Last Action" onClick={setToPrevCourseData} className="undo-btn" />
+				{isLastSemester && !singular && (
+					<div
+						title="Delete semester"
+						className="delete-btn"
+						onClick={() => deleteSemester(index)}
+					/>
+				)}
 			</div>
 			<div className="header">Semester #{index + 1}</div>
 			<div className="main">

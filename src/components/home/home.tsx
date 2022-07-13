@@ -1,4 +1,5 @@
 import { ReactElement, useState } from "react";
+import { useLocation } from "react-router-dom";
 import ToggleModeContainer from "./toggle-mode";
 import FeedbackIcon from "./feedback/feedback-icon";
 import "./home.css";
@@ -12,6 +13,7 @@ interface props {
 }
 
 const Home = ({ children, setGradingScale, scale, setAdditionalSettings, additionalSettings }: props) => {
+	const { pathname } = useLocation();
 	const [displayFullContent, setDisplayFullContent] = useState(true);
 
 	const MIN_WINDOW_WIDTH = 1000;
@@ -28,19 +30,17 @@ const Home = ({ children, setGradingScale, scale, setAdditionalSettings, additio
 	return (
 		<>
 			<div id="home-content">
-				{displayFullContent ? (
+				{displayFullContent && pathname !== "/" && (
 					<ToggleModeContainer
 						additionalSettings={additionalSettings}
 						setGradingScale={setGradingScale}
 						setAdditionalSettings={setAdditionalSettings}
 						scale={scale}
 					/>
-				) : (
-					<></>
 				)}
 
 				<div id="home-main">{children}</div>
-				<FeedbackIcon />
+				{pathname !== "/" && <FeedbackIcon />}
 			</div>
 		</>
 	);

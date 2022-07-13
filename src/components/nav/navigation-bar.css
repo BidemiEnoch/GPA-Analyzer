@@ -1,9 +1,10 @@
 :root {
 	--dropdown-border-color: rgb(14, 151, 26);
+	--test: rgb(66, 2, 56);
 }
 
 #navbar {
-	background: var(--purple);
+	background: var(--theme);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -11,9 +12,15 @@
 	min-height: 60px;
 	color: white;
 	z-index: 10;
+	height: 100px;
 }
+
+#navbar-left {
+	display: flex;
+}
+
 #nav-icon-wrapper {
-	margin: 0px 50px;
+	margin: 0px 70px 0px 50px;
 }
 
 #nav-icon,
@@ -41,13 +48,41 @@
 	color: #eee;
 }
 
+#nav-color-picker {
+	position: relative;
+}
+
+#nav-color-picker > div {
+	position: absolute;
+	margin-top: 20px;
+}
+
+#color-picker-text {
+	text-align: center;
+	background: white;
+	border-radius: 20px;
+	color: var(--theme);
+	padding: 5px 14px;
+	width: fit-content;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+#color-picker-wrapper-2 {
+	padding: 20px;
+}
+
+#color-picker-wrapper-2 > div {
+	border-radius: 10px;
+}
+
 #design-info {
 	font-size: 18px;
 	font-family: monospace;
 	text-transform: uppercase;
 	position: absolute;
-	right: 10px;
-	top: 4%;
+	top: 5%;
+	right: 2%;
 	z-index: 2;
 }
 
@@ -64,7 +99,7 @@
 	width: fit-content;
 	background-color: rgb(252, 255, 88);
 	border-radius: 5px;
-	color: var(--purple);
+	color: var(--theme);
 	font-size: 20px;
 	padding: 5px 24px;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

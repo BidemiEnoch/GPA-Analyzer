@@ -17,7 +17,6 @@
 	background: rgb(0, 116, 0);
 	border-radius: 20px;
 	color: white;
-	cursor: pointer;
 }
 
 #feedback-writearea-pointer {
@@ -62,4 +61,11 @@
 	box-shadow: var(--light-box-shadow);
 	background-color: #eee;
 	cursor: pointer;
+}
+
+#feedback-response {
+	background: var(--feedback-icon);
+	padding: 7px 14px;
+	color: white;
+	border-radius: 9px;
 }

@@ -20,11 +20,13 @@ const SemesterContainer = ({ gradingScale }: props) => {
 	const [chartSemesterIndex, setChartSemesterIndex] = useState(0);
 
 	const addSemester = () => {
+		if (semesters.length === 12) return;
 		semesters.push(new Semester());
 		setSemesters(Object.assign([], semesters));
 	};
 
 	const deleteSemester = (index: number) => {
+		if (semesters.length === 1) return;
 		semesters.splice(index, 1);
 		setSemesters(Object.assign([], semesters));
 	};
@@ -76,6 +78,7 @@ const SemesterContainer = ({ gradingScale }: props) => {
 							setSemesterData={setSemesterData}
 							displayWeightChart={displayWeightChart}
 							gradingScale={gradingScale}
+							singular={semesters.length === 1}
 						/>
 					))}
 				</div>

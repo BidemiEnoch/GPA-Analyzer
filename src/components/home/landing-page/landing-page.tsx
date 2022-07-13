@@ -3,20 +3,29 @@ import "./landing-page.css";
 
 const LandingPage = () => (
 	<div id="landing-page">
-		<div id="landing-page-header">WELCOME HOME</div>
+		<div id="landing-page-header">WELCOME, NOW YOU CAN...</div>
 		<div className="landing-page-main">
-			An all-in-one tool for analyzing your grades. This application is a must use for university students who are
-			tired of the old (and traditional way) of calculating grades.
+			<div className="landing-page-section">
+				<div className="section-icon" />
+				<div className="section-content">Compute your GPA from your grades</div>
+			</div>
+			<div className="landing-page-section">
+				<div className="section-icon" />
+				<div className="section-content">Analyze your GPA and CGPA graph</div>
+			</div>
+			<div className="landing-page-section">
+				<div className="section-icon" />
+				<div className="section-content">Predict your final grades</div>
+			</div>
+			<div className="landing-page-section">
+				<div className="section-icon" />
+				<div className="section-content">And more...</div>
+			</div>
 		</div>
-		<div className="landing-page-main">
-			And oh! This application is not just for students, Universities can use this app to analyze data on students
-			grades.
-		</div>
-		<div id="landing-page-btn">
-			<Link to="/gpa-calculator" target="_blank" rel="noopener noreferrer">
-				<div className="basic-btn">GET STARTED</div>
-			</Link>
-		</div>
+
+		<Link to="/gpa-calculator" target="_blank" rel="noopener noreferrer">
+			<div id="landing-page-btn"> GET STARTED</div>
+		</Link>
 	</div>
 );
 

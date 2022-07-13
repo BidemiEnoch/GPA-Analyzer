@@ -37,11 +37,7 @@ export class CourseData {
 }
 
 /*
-
-
 The Course component
-
-
 */
 
 interface props {

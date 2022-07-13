@@ -1,24 +1,49 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { GithubPicker } from "react-color";
+import Theme from "../../data/theme.json";
 import "./navigation-bar.css";
 
 const NavBar = () => {
 	const [extendAuthorInfo, setExtendAuthorInfo] = useState(false);
+	const [extendColorPicker, setExtendColorPicker] = useState(false);
 	const [authorInfoOpacity, setAuthorInfoOpacity] = useState(0);
 
 	const toggleAuthorInfo = (val: boolean) => {
 		setExtendAuthorInfo(val);
 		val ? setTimeout(() => setAuthorInfoOpacity(1), 200) : setAuthorInfoOpacity(0);
-		//alert("works");
+	};
+
+	const changeTheme = (color: any) => {
+		document.body.style.setProperty("--theme", color.hex);
 	};
 
 	return (
 		<nav id="navbar">
-			<div id="nav-icon-wrapper">
-				<Link to="/">
-					<div id="nav-icon" />
-					<h3 id="nav-text"> GPA ANALYZER</h3>
-				</Link>
+			<div id="navbar-left">
+				<div id="nav-icon-wrapper">
+					<Link to="/">
+						<div id="nav-icon" />
+						<h3 id="nav-text"> GPA ANALYZER</h3>
+					</Link>
+				</div>
+
+				<div id="nav-color-picker">
+					<div
+						onMouseEnter={() => setExtendColorPicker(true)}
+						onMouseLeave={() => setExtendColorPicker(false)}
+					>
+						<div id="color-picker-text">Theme</div>
+						{extendColorPicker && (
+							<div id="color-picker-wrapper-2">
+								<GithubPicker
+									colors={Theme.colors}
+									onChangeComplete={changeTheme}
+								/>
+							</div>
+						)}
+					</div>
+				</div>
 			</div>
 
 			<div id="design-info">
