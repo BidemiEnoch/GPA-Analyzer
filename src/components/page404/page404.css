@@ -1,0 +1,14 @@
+#page_not_found {
+	padding: 10px;
+}
+
+#page_not_found-header {
+	font-weight: 600;
+	text-align: center;
+	font-size: 65px;
+}
+
+#page_not_found-content {
+	font-size: 22px;
+	text-align: center;
+}

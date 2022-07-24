@@ -98,7 +98,7 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 					</div>
 				</div>
 				<div className="toggle-mode-section">
-					<div className="toggle-mode-header">Check out some helpful links</div>
+					<div className="toggle-mode-header">Some helpful links</div>
 					<div className="toggle-mode-main">
 						<ul>
 							<li>
@@ -113,6 +113,18 @@ const ToggleModeContainer = ({ setGradingScale, scale, setAdditionalSettings, ad
 
 							<li>
 								<a href="https://github.com/repo">Github source code</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div className="toggle-mode-section">
+					<div className="toggle-mode-header">Feedbacks</div>
+					<div className="toggle-mode-main">
+						<ul>
+							<li>
+								<Link to="/feedbacks" target={target} rel="noreferrer">
+									All feedbacks
+								</Link>
 							</li>
 						</ul>
 					</div>

@@ -4,6 +4,14 @@ import { GithubPicker } from "react-color";
 import Theme from "../../data/theme.json";
 import "./navigation-bar.css";
 
+const NavLink = ({ url, name }: { url: string; name: string }) => (
+	<a href={url} target="_blank" rel="noreferrer">
+		<div className="author-links-child" id={name.toLowerCase()}>
+			{name}
+		</div>
+	</a>
+);
+
 const NavBar = () => {
 	const [extendAuthorInfo, setExtendAuthorInfo] = useState(false);
 	const [extendColorPicker, setExtendColorPicker] = useState(false);
@@ -16,6 +24,7 @@ const NavBar = () => {
 
 	const changeTheme = (color: any) => {
 		document.body.style.setProperty("--theme", color.hex);
+		sessionStorage.setItem("theme", color.hex);
 	};
 
 	return (
@@ -54,56 +63,24 @@ const NavBar = () => {
 						onMouseLeave={() => toggleAuthorInfo(false)}
 					>
 						<div id="author-name">K. Abidemi</div>
-						{extendAuthorInfo ? (
-							<>
-								<div
-									id="drop-icon"
-									style={{ opacity: authorInfoOpacity }}
-								/>
-								<div
-									id="author-links"
-									style={{ opacity: authorInfoOpacity }}
-								>
-									<a
-										href="https://github.com/BidemiEnoch"
-										target="_blank"
-										rel="noreferrer"
-									>
-										<div
-											className="author-links-child"
-											id="github"
-										>
-											Github
-										</div>
-									</a>
-									<a
-										href="https://www.linkedin.com/in/koledoye-abidemi-5a27241b8/"
-										target="_blank"
-										rel="noreferrer"
-									>
-										<div
-											className="author-links-child"
-											id="linked-in"
-										>
-											LinkedIn
-										</div>
-									</a>
-									<a
-										href="https://www.sololearn.com/profile/6860646"
-										target="_blank"
-										rel="noreferrer"
-									>
-										<div
-											className="author-links-child"
-											id="sololearn"
-										>
-											Sololearn
-										</div>
-									</a>
+						{extendAuthorInfo && (
+							<div style={{ opacity: authorInfoOpacity }}>
+								<div id="drop-icon" />
+								<div id="author-links">
+									<NavLink
+										url="https://github.com/BidemiEnoch"
+										name="Github"
+									/>
+									<NavLink
+										url="https://www.linkedin.com/in/koledoye-abidemi-5a27241b8/"
+										name="Linkedin"
+									/>
+									<NavLink
+										url="https://www.sololearn.com/profile/6860646"
+										name="Sololearn"
+									/>
 								</div>
-							</>
-						) : (
-							<></>
+							</div>
 						)}
 					</div>
 				</div>

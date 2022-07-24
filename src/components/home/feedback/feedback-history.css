@@ -1,0 +1,29 @@
+#feedback-container-head {
+	text-align: center;
+	margin-bottom: 20px;
+	border: 1px solid #222;
+	border-radius: 3px;
+	padding: 9px 10px;
+}
+
+.feedback-history-container {
+	min-width: 200px;
+	max-width: 500px;
+	min-height: 100px;
+	height: fit-content;
+	border: 1px solid grey;
+	padding: 5px 5px;
+	margin: 9px 0px;
+	border-radius: 3px;
+}
+
+.history-header {
+	width: fit-content;
+	margin: auto;
+	font-weight: 700;
+}
+
+.history-content {
+	padding: 15px 13px;
+	color: #333;
+}

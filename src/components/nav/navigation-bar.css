@@ -98,7 +98,7 @@
 #author-name {
 	width: fit-content;
 	background-color: rgb(252, 255, 88);
-	border-radius: 5px;
+	border-radius: 20px;
 	color: var(--theme);
 	font-size: 20px;
 	padding: 5px 24px;
@@ -141,7 +141,7 @@
 	border-color: black;
 }
 
-#linked-in {
+#linkedin {
 	border-color: blue;
 }
 

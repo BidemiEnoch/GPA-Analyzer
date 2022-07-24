@@ -7,11 +7,21 @@ import FinalGradeContainer from "./components/home/final-grade-components/final-
 import AnalyzerContainer from "./components/home/cgpa-analyzer-components/cgpa-analyzer-container";
 import LandingPage from "./components/home/landing-page/landing-page";
 import UniContainer from "./components/home/university/university-container";
+import FeedbackHistory from "./components/home/feedback/feedback-history";
+import CopyRights from "./components/footer/copyrights";
+import Page404 from "./components/page404/page404";
 import { fourPointScale } from "./utils/compute-gpa";
 import "./App.css";
 
 const App = () => {
 	const [scale, setScale] = useState<Map<string, number>>(fourPointScale);
+	const theme = sessionStorage.getItem("theme");
+	if (theme) {
+		//document.body.style.setProperty("--theme", theme);
+		//alert(theme);
+	} else {
+		//alert(theme + " unfound");
+	}
 
 	const [additionalSettings, setAdditionalSettings] = useState({
 		"open links in new tab": false,
@@ -44,10 +54,12 @@ const App = () => {
 							path="/university-tools"
 							element={<UniContainer gradingScale={scale} />}
 						/>
-						<Route element={<div>404</div>} />
+						<Route path="/feedbacks" element={<FeedbackHistory />} />
+						<Route path="*" element={<Page404 />} />
 					</Routes>
 				</Home>
 			</main>
+			<CopyRights />
 		</>
 	);
 };

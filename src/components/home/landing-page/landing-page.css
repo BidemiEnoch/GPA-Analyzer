@@ -13,7 +13,7 @@
 }
 
 #landing-page-header {
-	font-size: 38px;
+	font-size: 33px;
 	text-align: center;
 	margin: 10px 0px;
 	font-family: Prototype;
@@ -29,18 +29,18 @@
 
 .landing-page-section {
 	display: flex;
-	margin: 14px 10px;
+	margin: 4px 10px;
 }
 
 .section-icon {
 	width: 30px;
 	height: 30px;
 	background: url(/src/assets/svg/green-tick.svg) no-repeat;
-	margin: 20px 0px 0px 0px;
+	margin: 15px 0px 0px 0px;
 }
 
 .section-content {
-	margin: 0px 20px;
+	margin: 0px 10px;
 	line-height: 1.5;
 	word-spacing: 10px;
 	font-weight: 600;
@@ -50,9 +50,9 @@
 	letter-spacing: 1px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	text-transform: uppercase;
-	border: 1px solid rgb(9, 105, 9);
-	padding: 15px 45px;
+	background-color: rgb(240, 240, 240);
+	border: 2px solid rgb(9, 105, 9);
+	padding: 10px 45px;
 	border-radius: 5px;
 	height: fit-content;
 }
@@ -67,4 +67,8 @@
 	border-radius: 7px;
 	background: rgb(230, 229, 235);
 	font-weight: 600;
+}
+
+#landing-page-btn:hover {
+	background: rgb(195, 194, 199);
 }
