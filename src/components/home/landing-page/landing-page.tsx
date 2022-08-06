@@ -23,7 +23,7 @@ const LandingPage = () => (
 			</div>
 		</div>
 
-		<Link to="/gpa-calculator" target="_blank" rel="noopener noreferrer">
+		<Link to="/gpa-calculator">
 			<div id="landing-page-btn"> GET STARTED</div>
 		</Link>
 	</div>

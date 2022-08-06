@@ -9,14 +9,25 @@
 	padding: 15px;
 }
 
-#feedback-icon {
+#feedback-header {
 	margin-top: 50px;
 	margin-bottom: 5x;
-	padding: 10px 20px;
+	padding: 3px 10px;
 	text-align: center;
-	background: rgb(0, 116, 0);
+	background: none;
 	border-radius: 20px;
-	color: white;
+	color: var(--feedback-icon);
+	font-weight: 600;
+	font-size: large;
+	display: inline-flex;
+}
+
+#feedback-icon {
+	width: 40px;
+	height: 40px;
+	background-image: url(../../../assets/svg/feedback-icon.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #feedback-writearea-pointer {
@@ -61,6 +72,10 @@
 	box-shadow: var(--light-box-shadow);
 	background-color: #eee;
 	cursor: pointer;
+}
+
+#feedback-submit:hover {
+	background-color: #ccc;
 }
 
 #feedback-response {

@@ -15,12 +15,9 @@ import "./App.css";
 
 const App = () => {
 	const [scale, setScale] = useState<Map<string, number>>(fourPointScale);
-	const theme = sessionStorage.getItem("theme");
+	const theme = localStorage.getItem("theme");
 	if (theme) {
-		//document.body.style.setProperty("--theme", theme);
-		//alert(theme);
-	} else {
-		//alert(theme + " unfound");
+		document.body.style.setProperty("--theme", theme);
 	}
 
 	const [additionalSettings, setAdditionalSettings] = useState({

@@ -24,7 +24,7 @@ const NavBar = () => {
 
 	const changeTheme = (color: any) => {
 		document.body.style.setProperty("--theme", color.hex);
-		sessionStorage.setItem("theme", color.hex);
+		localStorage.setItem("theme", color.hex);
 	};
 
 	return (
@@ -33,7 +33,7 @@ const NavBar = () => {
 				<div id="nav-icon-wrapper">
 					<Link to="/">
 						<div id="nav-icon" />
-						<h3 id="nav-text"> GPA ANALYZER</h3>
+						<h3 id="nav-text">GPA ANALYZER</h3>
 					</Link>
 				</div>
 

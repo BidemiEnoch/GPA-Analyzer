@@ -23,7 +23,10 @@ const FeedbackIcon = () => {
 
 	return (
 		<div id="feedback-container">
-			<div id="feedback-icon">feedback</div>
+			<div id="feedback-header">
+				<div id="feedback-header-text">Give us feedback</div>
+				<div id="feedback-icon" />
+			</div>
 			<div id="feedback-writearea-wrapper">
 				<div id="feedback-writearea-pointer"></div>
 				{submitStatus ? (

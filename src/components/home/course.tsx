@@ -88,7 +88,7 @@ export const Course = ({ data, index, setCredit, setGrade, setName, removeCourse
 			</select>
 		</td>
 		<td>
-			<div className="close-row-btn" onClick={() => removeCourse(index)}>
+			<div title="Delete Row" className="close-row-btn" onClick={() => removeCourse(index)}>
 				<TrashIcon />
 			</div>
 		</td>
