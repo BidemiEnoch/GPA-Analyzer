@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--part of the rodentia icon theme by sixsixfive released under CC0 (https://creativecommons.org/publicdomain/zero/1.0/) on openclipart-->
-<svg id="undo-btn-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
- 
- <g transform="translate(9.0625434e-8,-1.0464307)" id="1">
-  
-  <path d="m 20.414885,40.432434 c -3.173238,1.032161 -2.27857,3.951868 1.227876,3.525318 27.046493,-3.290136 18.881252,-31.383383 2.608819,-31.223863 l 0,-8.7338887 L 8.7422834,17.588481 24.25158,31.839267 c 0,0 0,-9.006816 0,-9.006816 13.100831,-0.545874 14.648374,16.864499 -3.836695,17.599983 l 0,0 z" id="B" display="block" stroke="#9c8100" fill="#111" stroke-linejoin="round"/>
-  
-  
- </g>
-</svg>
-
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="undo-btn-svg" viewBox="0 0 48 48"><g id="1" transform="translate(9.0625434e-8,-1.0464307)"><path id="B" fill="#111" stroke="#9c8100" stroke-linejoin="round" d="m 20.414885,40.432434 c -3.173238,1.032161 -2.27857,3.951868 1.227876,3.525318 27.046493,-3.290136 18.881252,-31.383383 2.608819,-31.223863 l 0,-8.7338887 L 8.7422834,17.588481 24.25158,31.839267 c 0,0 0,-9.006816 0,-9.006816 13.100831,-0.545874 14.648374,16.864499 -3.836695,17.599983 l 0,0 z" display="block"/></g></svg>
